@@ -22,5 +22,16 @@ describe('hobbits model', () => {
       // verify that there are now two records inserted
       expect(hobbits).toHaveLength(2);
     });
+    //Let's add another test to make sure that the record is making it to the database
+    //and that the .insert() method returns the newly inserted hobbit.
+    / note we're checking one hobbit at a time
+it('should insert the provided hobbit into the db', async () => {
+  let hobbit = await Hobbits.insert({ name: 'gaffer' });
+  expect(hobbit.name).toBe('gaffer');
+
+  // note how we're reusing the hobbit variable
+  hobbit = await Hobbits.insert({ name: 'sam' });
+  expect(hobbit.name).toBe('sam');
+});
   });
 });
