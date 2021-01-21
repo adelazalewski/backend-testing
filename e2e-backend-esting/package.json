@@ -1,0 +1,20 @@
+{
+  "name": "e2e-backend-esting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env DB_ENV=testing jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.16"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^26.6.3"
+  }
+}
