@@ -3,7 +3,10 @@ const db = require('../data/dbConfig.js');
 
 // the data access file we are testing
 const Hobbits = require('./hobbitsModel.js');
-
+beforeEach(async () => {
+  // this function executes and clears out the table before each test
+  await db('hobbits').truncate();
+});
 describe('hobbits model', () => {
   describe('insert()', () => {
     // this example uses async/await to make it easier to read and understand
